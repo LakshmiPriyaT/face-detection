@@ -32,44 +32,7 @@ export default class Main extends React.Component {
     }
 
     render() {
-        const { hasCameraPermission } = this.state;
-        if (hasCameraPermission === null) {
-            return <View />
-        }
-        if (hasCameraPermission === false) {
-            return (
-                <View style={styles.container}>
-                    <Text>No access to camera</Text>
-                </View>
-            )
-        }
-        console.log(this.state.faces)
-        return (
-            <View style={styles.container}>
-                <SafeAreaView style={styles.droidSafeArea} />
-                <View style={styles.headingContainer}>
-                    <Text style={styles.titleText}>FRAPP</Text>
-                </View>
-                <View style={styles.cameraStyle}>
-                    <Camera
-                        style={{ flex: 1 }}
-                        type={Camera.Constants.Type.front}
-                        faceDetectorSettings={{
-                            mode: FaceDetector.Constants.Mode.fast,
-                            detectLandmarks: FaceDetector.Constants.Landmarks.all,
-                            runClassifications: FaceDetector.Constants.Classifications.all
-                        }}
-                        onFacesDetected={this.onFacesDetected}
-                        onFacesDetectionError={this.onFacesDetectionError}
-                    />
-                </View>
-                <View style={styles.filterContainer}>
-
-                </View>
-                <View style={styles.actionContainer}>
-
-                </View>
-            </View>
+        
         )
     }
 }
